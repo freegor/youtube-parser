@@ -158,7 +158,7 @@ public class Youtube: NSObject {
       let priority = DispatchQoS.background
       //dispatch_async(dispatch_get_global_queue(priority, 0))
       DispatchQueue.global(qos: .background).async {
-        if let youtubeID = self.youtubeIDFromYoutubeURL(youtubeURL: youtubeURL), videoInformation = self.h264videosWithYoutubeID(youtubeID) {
+        if let youtubeID = self.youtubeIDFromYoutubeURL(youtubeURL: youtubeURL), videoInformation = self.h264videosWithYoutubeID(youtubeID: youtubeID) {
           DispatchQueue.main.async {
             completion?(videoInfo: videoInformation, error: nil)
           }
@@ -170,3 +170,4 @@ public class Youtube: NSObject {
       }
     }
   }
+
